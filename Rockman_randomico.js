@@ -14,10 +14,10 @@ function iniciar() {
     //Função que inicio a função randomicos nos cinco elementos aleatórios de uma vez.
     //Também zera a pontuação de um jogo anterior e esconde os elementos de tentativas restantes e pontos bônus
     randomico("aleatorio1",180,"start");
-    randomico("aleatorio2",180,"start");
-    randomico("aleatorio3",180,"start");
-    randomico("aleatorio4",180,"start");
-    randomico("aleatorio5",180,"start");
+    //randomico("aleatorio2",180,"start");
+    //randomico("aleatorio3",180,"start");
+    //randomico("aleatorio4",180,"start");
+    //randomico("aleatorio5",180,"start");
     document.getElementById("pontos").value = 0;
     document.getElementById("b2").style.display ="none";
     document.getElementById("b8").style.display ="none";
@@ -25,6 +25,8 @@ function iniciar() {
 
 
 }
+
+
 
 function finalizar(){
                 //Calcula a pontuação total do usuário
@@ -56,31 +58,36 @@ function finalizar(){
             
 }
 
+
+
 function parar(){
-    n2 = 0 ;//reseta o tempo
-    //fazer o switch da variavel tentativa para começar pelo elemento aleatorio1 ate aleatorio5 para parar o elemento.
-    switch (tentativa)
+    if (tentativa > 0)
     {
-            case 5:
-                elemento = "aleatorio1";
-                break;
-            case 4:
-                elemento = "aleatorio2";
-                break;
-            case 3:
-                elemento = "aleatorio3";
-                break;
-            case 2:
-                elemento = "aleatorio4";
-                break;
-            case 1:
-                elemento = "aleatorio5";
-                break;
-            default:
-                pontuar(0);
-                break;
-    }   
+        n2 = 0 ;//reseta o tempo
+        //fazer o switch da variavel tentativa para começar pelo elemento aleatorio1 ate aleatorio5 para parar o elemento.
+        switch (tentativa)
+        {
+                case 5:
+                    elemento = "aleatorio1";
+                    break;
+                case 4:
+                    elemento = "aleatorio2";
+                    break;
+                case 3:
+                    elemento = "aleatorio3";
+                    break;
+                case 2:
+                    elemento = "aleatorio4";
+                    break;
+                case 1:
+                    elemento = "aleatorio5";
+                    break;
+                default:
+                    pontuar(0);
+                    break;
+        }   
     randomico(elemento,0,"stop");
+    }
 }
 
 function pontuar(numero1) {
@@ -118,38 +125,49 @@ function aux_randomico(elemento){ //gera um número aleatorio de 0 a 9  e coloca
     document.getElementById(elemento).value = n1;
     //Vou fazer aqui o switch para colocar as imagens
     // 0 DrWily; 1 cutman ; 2 gutsman; 3 elecman; 4 iceman; 5 fireman ; 6 bombman; 7 roll ; 8 Dr Light ; 9 Rockman
-    //0 DrWily3.jpg; cutman_v2.jpeg ; gutsman.jpg; Elecman.jpg ; iceman_v1.jpeg; fireman.jpg ; bombman.jpg; roll_v2.jpeg; Dr_Light_v2.jpeg; Megaman.png.
+    //0 DrWily3.jpg; cutman_v2.jpeg ; gutsman.jpg; Elecman.jpg ; iceman_v1.jpeg; fireman.jpg ; bombman.jpg; roll.png; Dr_Light_v2.jpeg; Megaman.png.
     switch(n1)
     {
         case 0:
+            
             document.getElementById(elemento).src = "imagens/DrWily3.jpg";
+           // document.getElementsByName(elemento)[0].style.backgroundColor="yellow";
             break;
         case 1:
             document.getElementById(elemento).src = "imagens/cutman_v2.jpeg";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="red";
             break;
         case 2:
             document.getElementById(elemento).src = "imagens/gutsman.jpg";
+           // document.getElementsByName(elemento)[0].style.backgroundColor="green";
             break;
         case 3:
             document.getElementById(elemento).src = "imagens/Elecman.jpg";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="brown";
             break;
         case 4:
             document.getElementById(elemento).src = "imagens/iceman_v1.jpeg";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="LightBlue";
             break;
         case 5:
             document.getElementById(elemento).src = "imagens/fireman.jpg";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="Cornsilk";
             break;
         case 6:
             document.getElementById(elemento).src = "imagens/bombman.jpg";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="lavanda";
             break;
         case 7:
-            document.getElementById(elemento).src = "imagens/roll_v2.jpeg";
+            document.getElementById(elemento).src = "imagens/roll.png";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="darkgray";
             break;
         case 8:
             document.getElementById(elemento).src = "imagens/Dr_Light_v2.jpeg"
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="Aliceblue";
             break;
         case 9:
             document.getElementById(elemento).src = "imagens/Megaman.png";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="blue";
             break;
         default:
             break;
@@ -164,25 +182,24 @@ function randomico(elemento, velocidade, startstop) {
         if(tentativa <=5 && tentativa >=0)
         {
             switch(elemento) {
-            case  "aleatorio1":
-                p = 0;
-                clearInterval(randomicos1[p]);
+            case  "aleatorio1":     
+                clearInterval(randomicos1[0]);
+                randomico("aleatorio2",180,"start");
                 break;
             case "aleatorio2":
-                p = 1;
-                clearInterval(randomicos1[p]);
+                clearInterval(randomicos1[1]);
+                randomico("aleatorio3",180,"start");
                 break;
             case "aleatorio3":
-                p = 2;
-                clearInterval(randomicos1[p]);
+                clearInterval(randomicos1[2]);
+                randomico("aleatorio4",180,"start");
                 break;
             case "aleatorio4":
-                p = 3;
-                clearInterval(randomicos1[p]);
+                clearInterval(randomicos1[3]);
+                randomico("aleatorio5",180,"start");
                 break;
             case "aleatorio5":
-                p = 4;
-                clearInterval(randomicos1[p]);
+                clearInterval(randomicos1[4]);
                 break;
             default:
                 break;
@@ -215,7 +232,7 @@ function randomico(elemento, velocidade, startstop) {
                 document.getElementById(elemento).src = "imagens/bombman.jpg";
                 break;
             case 7:
-                document.getElementById(elemento).src = "imagens/roll_v2.jpeg";
+                document.getElementById(elemento).src = "imagens/roll.png";
                 break;
             case 8:
                 document.getElementById(elemento).src = "imagens/Dr_Light_v2.jpeg"

@@ -1,4 +1,10 @@
+.carta{
+    /* display : flex; */
+    margin : 2 auto;
+    width : 60vw;
+    height : 60vh;
 
+}
 
 #picture div img{
     padding:5px;
