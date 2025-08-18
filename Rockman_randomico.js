@@ -13,7 +13,7 @@ document.getElementsByTagName("body").onload = iniciar();
 function iniciar() {
     //Função que inicio a função randomicos nos cinco elementos aleatórios de uma vez.
     //Também zera a pontuação de um jogo anterior e esconde os elementos de tentativas restantes e pontos bônus
-    randomico("aleatorio1",180,"start");
+    randomico("aleatorio1",590,"start");
     //randomico("aleatorio2",180,"start");
     //randomico("aleatorio3",180,"start");
     //randomico("aleatorio4",180,"start");
@@ -29,14 +29,16 @@ function iniciar() {
 
 
 function finalizar(){
+                //calcula a pontuação extra
                 //Calcula a pontuação total do usuário
                 //Faz com que todos os aleatórios parem , caso ainda exista algum em atividade
                 //Mostra o botão para reiniciar o jogo
                 //Atribui a pontuação ao modal de jogo encerrado e mostra o modal
-                 //chamar aqui a função que calcula a pontuação extra
+
+                //CALCULANDO A PONTUAÇÃO EXTRA:
                 extra = pontos_extra(resultado);
-                
                 total = resultado + extra;
+                //ATRIBUINDO A PONTUAÇÃO AO MODAL
                 document.getElementById("info").innerHTML = "JOGO ENCERRADO " + total + " PONTOS"; 
                 document.getElementById("b1").style.display ="none";
                 document.getElementById("b2").style.display ="none";
@@ -118,7 +120,7 @@ function pontuar(numero1) {
         }
 }
 
-
+//as funções aux_randomico e randomico são responsáveis por mudar as imagens aleatoriamente nas cartas
 function aux_randomico(elemento){ //gera um número aleatorio de 0 a 9  e coloca como value da tag input
     var n1 = 0;
     n1 = Math.floor(Math.random() * 10);
@@ -174,8 +176,7 @@ function aux_randomico(elemento){ //gera um número aleatorio de 0 a 9  e coloca
     }
 }
 
-function randomico(elemento, velocidade, startstop) {
-    //coloquei a tag input dentro de uma div para poder funcionar
+function randomico(elemento, velocidade, startstop) { 
     if (startstop == "stop")
     {
         if (n2 > 100){finalizar();}
