@@ -1,5 +1,6 @@
 
 let n2 = 0; // repetições da função randomico definido pela função inicia_randomico (tempo limite para cada jogada)
+let velocidadeCarta = 590; //Velocidade de alternancia das cartas
 let tentativa = 5; //Número de tentativas que a pessoa tem
 let resultado = 0; //Somatório do array dos numeros capturados
 let extra = 0; //pontuação extra
@@ -13,7 +14,7 @@ document.getElementsByTagName("body").onload = iniciar();
 function iniciar() {
     //Função que inicio a função randomicos nos cinco elementos aleatórios de uma vez.
     //Também zera a pontuação de um jogo anterior e esconde os elementos de tentativas restantes e pontos bônus
-    randomico("aleatorio1",590,"start");
+    randomico("aleatorio1",velocidadeCarta,"start");
     //randomico("aleatorio2",180,"start");
     //randomico("aleatorio3",180,"start");
     //randomico("aleatorio4",180,"start");
@@ -179,25 +180,25 @@ function aux_randomico(elemento){ //gera um número aleatorio de 0 a 9  e coloca
 function randomico(elemento, velocidade, startstop) { 
     if (startstop == "stop")
     {
-        if (n2 > 100){finalizar();}
-        if(tentativa <=5 && tentativa >=0)
+        if (n2 > 100){finalizar();} //Se o tempo estiver esgotado, chama a função finalizar.
+        if(tentativa <=5 && tentativa >=0) //se o tempo não estiver esgotado e restarem tentativas vai para o switch.
         {
             switch(elemento) {
             case  "aleatorio1":     
                 clearInterval(randomicos1[0]);
-                randomico("aleatorio2",180,"start");
+                randomico("aleatorio2",velocidadeCarta,"start");
                 break;
             case "aleatorio2":
                 clearInterval(randomicos1[1]);
-                randomico("aleatorio3",180,"start");
+                randomico("aleatorio3",velocidadeCarta,"start");
                 break;
             case "aleatorio3":
                 clearInterval(randomicos1[2]);
-                randomico("aleatorio4",180,"start");
+                randomico("aleatorio4",velocidadeCarta,"start");
                 break;
             case "aleatorio4":
                 clearInterval(randomicos1[3]);
-                randomico("aleatorio5",180,"start");
+                randomico("aleatorio5",velocidadeCarta,"start");
                 break;
             case "aleatorio5":
                 clearInterval(randomicos1[4]);
