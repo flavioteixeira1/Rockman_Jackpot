@@ -3,14 +3,58 @@
     margin : 2 auto;
     width : 60vw;
     height : 60vh;
+}
 
+.limite-largura
+{
+    max-width: 1024px;
+}
+
+.cards {
+    /* ofertas-area   */
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 32px auto 0 auto;
+}
+
+.cards-interno {
+    /* ofertas-imagens */
+    width: 100%;
+    height: 375px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-m {
+    /*oferta-quatro-imagens*/
+    width: calc(50% - 10px);
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-m figure {
+    /* oferta-quatro-imagens figure  */
+    position: relative;
+    width: calc(50% - 10px);
+    height: calc(50% - 10px);
+    margin: 0 6px;
+}
+    
+.card-m img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 #picture div img{
     padding:5px;
-    width:160px;
-    height:160px;
-    align-content: center;
+    max-width: 100%;
+    height: auto;
 }
 
 #pontos{
@@ -21,6 +65,155 @@
     width:50px;
     height:50px;
     display:inline-flex;
+}
 
+/* ===== MELHORIAS DE RESPONSIVIDADE ===== */
+
+/* Ajustes gerais de responsividade */
+.container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Imagens responsivas */
+.img-thumbnail {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 767px) {
+  #picture div img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .btn-lg {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  
+  /* Ajustar tamanho das colunas para mobile */
+  .col-xs-1, .col-xs-2, .col-xs-4, .col-xs-5, .col-xs-6 {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  #picture div img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  h3 {
+    font-size: 16px;
+  }
+  
+  /* Ajustar modal para mobile */
+  .modal-body {
+    padding: 15px;
+  }
+  
+  #modalregrasfiguras li {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  #modalregrasfiguras li img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Melhorar exibição das regras no modal */
+#modalregrasfiguras {
+  padding-left: 15px;
+}
+
+#modalregrasfiguras li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+#modalregrasfiguras li img {
+  margin-left: 10px;
+}
+
+/* Ajustar botões para mobile */
+.btn {
+  white-space: normal;
+}
+
+/* Garantir que os elementos de texto sejam responsivos */
+.bg-info, .bg-warning, .bg-success {
+  word-wrap: break-word;
+}
+
+/* Classes auxiliares para responsividade */
+.btn-block-mobile {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .btn-block-mobile {
+    width: auto;
+    margin-bottom: 0;
+  }
+}
+
+/* Ajustes específicos para as cartas do jogo em mobile */
+@media (max-width: 767px) {
+  .row > div[class^="col-"] {
+    margin-bottom: 10px;
+  }
+  
+  #aleatorio1, #aleatorio2, #aleatorio3, #aleatorio4, #aleatorio5 {
+    width: 80px !important;
+    height: 80px !important;
+    margin: 0 auto;
+  }
+}
+
+/* Melhorias para o modal de regras em dispositivos móveis */
+@media (max-width: 767px) {
+  #MyModal .modal-dialog {
+    margin: 10px;
+    width: auto;
+  }
+  
+  #MyModal .modal-content {
+    border-radius: 5px;
+  }
+  
+  #MyModal .modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+}
+
+/* Ajuste para a área de resultado */
+#resultado {
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  #resultado {
+    font-size: 12px;
+  }
+}
+
+/* Ajuste para o input de pontos */
+#pontos {
+  width: 60px;
+  text-align: center;
 }
 

@@ -1,6 +1,20 @@
 
+let carta_aleatoria = [
+    { personagem : "nenhum"} ,
+    { id : 15},
+    {imagem : "imagens/fundo_carta.jpeg"}
+];
+
+let carta_escolhida = [
+    { personagem : "nenhum"} ,
+    { id : 14},
+    {imagem : "imagens/fundo_carta.jpeg"}
+];
+
+
 let n2 = 0; // repetições da função randomico definido pela função inicia_randomico (tempo limite para cada jogada)
-let tentativa = 5; //Número de tentativas que a pessoa tem
+let total_tentativas = 5; //Número de tentativas que a pessoa tem
+let tentativa = 0; //Número de tentativas restantes
 let resultado = 0; //Somatório do array dos numeros capturados
 let extra = 0; //pontuação extra
 let total = 0; //pontuação total do usuário
@@ -13,11 +27,13 @@ document.getElementsByTagName("body").onload = iniciar();
 function iniciar() {
     //Função que inicio a função randomicos nos cinco elementos aleatórios de uma vez.
     //Também zera a pontuação de um jogo anterior e esconde os elementos de tentativas restantes e pontos bônus
-    randomico("aleatorio1",250,"start");
-    //randomico("aleatorio2",250,"start");
-    //randomico("aleatorio3",250,"start");
-    //randomico("aleatorio4",250,"start");
-    //randomico("aleatorio5",250,"start");
+    //randomico("aleatorio1",180,"start");
+    //randomico("aleatorio2",180,"start");
+    //randomico("aleatorio3",180,"start");
+    //randomico("aleatorio4",180,"start");
+    //randomico("aleatorio5",180,"start");
+    tentativa = total_tentativas;
+    gerar_personagem_carta();
     document.getElementById("pontos").value = 0;
     document.getElementById("b2").style.display ="none";
     document.getElementById("b8").style.display ="none";
@@ -25,6 +41,129 @@ function iniciar() {
 
 
 }
+
+function gerar_personagem_carta() {
+    //escolhe um número entre 0 e 9;
+    //conforme o número atribui um novo id e uma nova imagem ao objeto literal carta_aleatoria
+    //Se o número for 0 o personagem vai ser o Dr. Wily e a imagem vai ser imagens/DrWily3.jpg
+    //Se o número for 1 o personagem vai ser o cutman  e a imagem vai ser imagens/cutman_v2.jpeg
+    //e assim por diante
+    var numero1 = Math.floor(Math.random() * 10);
+   
+    
+    switch(numero1) {
+        case 0:
+            carta_aleatoria.id = numero1;
+            carta_aleatoria.personagem = "Dr.Wily"
+            carta_aleatoria.imagem = "imagens/DrWily3.jpg"
+        case 1:
+            carta_aleatoria.id = numero1;
+            carta_aleatoria.personagem = "Cutman"
+            carta_aleatoria.imagem = "imagens/cutman_v2.jpg"
+        case 2:
+            carta_aleatoria.id = numero1;
+            carta_aleatoria.personagem = "Gutsman"
+            carta_aleatoria.imagem = "imagens/gutsman.jpg"
+        case 3:
+            carta_aleatoria.id = numero1;
+            carta_aleatoria.personagem = "Elecman"
+            carta_aleatoria.imagem = "imagens/Elecman.jpg"
+        case 4:
+            carta_aleatoria.id = numero1;
+            carta_aleatoria.personagem = "Iceman"
+            carta_aleatoria.imagem = "imagens/iceman_v1.jpg"
+        case 5:
+            carta_aleatoria.id = numero1;
+            carta_aleatoria.personagem = "Fireman"
+            carta_aleatoria.imagem = "imagens/fireman.jpg"
+        case 6:
+            carta_aleatoria.id = numero1;
+            carta_aleatoria.personagem = "Bombman"
+            carta_aleatoria.imagem = "imagens/bombman.jpg"
+        case 7:
+            carta_aleatoria.id = numero1;
+            carta_aleatoria.personagem = "Roll"
+            carta_aleatoria.imagem = "imagens/roll.png"
+        case 8: 
+            carta_aleatoria.id = numero1;
+            carta_aleatoria.personagem = "Dr.Light"
+            carta_aleatoria.imagem = "imagens/Dr_Light_v2.jpeg"
+        case 9:
+            carta_aleatoria.id = numero1;
+            carta_aleatoria.personagem = "Megaman"
+            carta_aleatoria.imagem = "imagens/megaman.png"
+    }
+}
+
+function escolher(valor){
+    //faz o switch para pegar o personagem e a imagem da carta escolhida
+    //compara com a carta aleatoria
+    //diminui o número de tentativas
+    //atribui a pontuação
+    if (tentativa >= 1) {
+    
+    switch(valor) {
+        case 0:
+            carta_escolhida.id = valor;
+            carta_escolhida.personagem = "Dr.Wily"
+            carta_escolhida.imagem = "imagens/DrWily3.jpg"
+        case 1:
+            carta_escolhida.id = valor;
+            carta_escolhida.personagem = "Cutman"
+            carta_escolhida.imagem = "imagens/cutman_v2.jpg"
+        case 2:
+            carta_escolhida.id = valor;
+            carta_escolhida.personagem = "Gutsman"
+            carta_escolhida.imagem = "imagens/gutsman.jpg"
+        case 3:
+            carta_escolhida.id = valor;
+            carta_escolhida.personagem = "Elecman"
+            carta_escolhida.imagem = "imagens/Elecman.jpg"
+        case 4:
+            carta_escolhida.id = valor;
+            carta_escolhida.personagem = "Iceman"
+            carta_escolhida.imagem = "imagens/iceman_v1.jpg"
+        case 5:
+            carta_escolhida.id = valor;
+            carta_escolhida.personagem = "Fireman"
+            carta_escolhida.imagem = "imagens/fireman.jpg"
+        case 6:
+            carta_escolhida.id = valor;
+            carta_escolhida.personagem = "Bombman"
+            carta_escolhida.imagem = "imagens/bombman.jpg"
+        case 7:
+            carta_escolhida.id = valor;
+            carta_escolhida.personagem = "Roll"
+            carta_escolhida.imagem = "imagens/roll.png"
+        case 8: 
+            carta_escolhida.id = valor;
+            carta_escolhida.personagem = "Dr.Light"
+            carta_escolhida.imagem = "imagens/Dr_Light_v2.jpeg"
+        case 9:
+            carta_escolhida.id = valor;
+            carta_escolhida.personagem = "Megaman"
+            carta_escolhida.imagem = "imagens/megaman.png"
+    }
+    
+    
+    if (carta_aleatoria.id == valor) {
+        valor +=2;
+        gerar_personagem_carta();
+        alert("parabéns, acertou !");
+        pontuar(valor);
+    }
+    else {
+        pontuar(0);
+        gerar_personagem_carta();
+        alert("Não é o personagem");
+    }
+
+
+    }
+    else finalizar();
+
+}
+
 
 
 
@@ -34,24 +173,29 @@ function finalizar(){
                 //Mostra o botão para reiniciar o jogo
                 //Atribui a pontuação ao modal de jogo encerrado e mostra o modal
                  //chamar aqui a função que calcula a pontuação extra
-                extra = pontos_extra(resultado);
+                //extra = pontos_extra(resultado);
                 
-                total = resultado + extra;
+                //total = resultado + extra;
+                total= resultado;
                 document.getElementById("info").innerHTML = "JOGO ENCERRADO " + total + " PONTOS"; 
                 document.getElementById("b1").style.display ="none";
                 document.getElementById("b2").style.display ="none";
                 //este primeiro for é para parar a função tempo_restante.
                 //ele percorre o array q contém os ids retornados do setInterval e vai dendo clear interval em cada um
+                /*
                 for(v = 0; v < tempo1.length; v++) {
                     clearInterval(tempo1[v]);
                     }
+                */
                 //este segundo for á para parar a função randômico de cada elemento, quando foi usado o setInterval para
                 //iniciar a alternância dos números foi retornado um id para cada randomico e está armazenado no array randomicos1
                 //vou percorrendo o array e dando um clear interval para parar a alternância.
+                /*
                 for (a = 0; a < randomicos1.length; a++){
                     //alert(randomicos1[a]);
                     clearInterval(randomicos1[a]); 
                 }
+                */
                 document.getElementById("reiniciar").style.display ="block";
                 document.getElementById("modalpontos").innerHTML = "JOGO ENCERRADO " + total + " PONTOS"; 
                 $("#Modal2").modal('show');
@@ -112,7 +256,7 @@ function pontuar(numero1) {
         document.getElementById("b2").innerHTML = "Restam ainda " + tentativa + " tentativas";
         }
     if(tentativa <=0) {
-            tempo_restante("parar");
+            //tempo_restante("parar");
             finalizar();
     
         }
@@ -124,37 +268,50 @@ function aux_randomico(elemento){ //gera um número aleatorio de 0 a 9  e coloca
     n1 = Math.floor(Math.random() * 10);
     document.getElementById(elemento).value = n1;
     //Vou fazer aqui o switch para colocar as imagens
+    // 0 DrWily; 1 cutman ; 2 gutsman; 3 elecman; 4 iceman; 5 fireman ; 6 bombman; 7 roll ; 8 Dr Light ; 9 Rockman
+    //0 DrWily3.jpg; cutman_v2.jpeg ; gutsman.jpg; Elecman.jpg ; iceman_v1.jpeg; fireman.jpg ; bombman.jpg; roll.png; Dr_Light_v2.jpeg; Megaman.png.
     switch(n1)
     {
         case 0:
-            document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/DrWily3.jpg";
+            
+            document.getElementById(elemento).src = "imagens/DrWily3.jpg";
+           // document.getElementsByName(elemento)[0].style.backgroundColor="yellow";
             break;
         case 1:
-            document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/cutman_v2.jpeg";
+            document.getElementById(elemento).src = "imagens/cutman_v2.jpeg";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="red";
             break;
         case 2:
-            document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/gutsman.jpg";
+            document.getElementById(elemento).src = "imagens/gutsman.jpg";
+           // document.getElementsByName(elemento)[0].style.backgroundColor="green";
             break;
         case 3:
-            document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/Elecman.jpg";
+            document.getElementById(elemento).src = "imagens/Elecman.jpg";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="brown";
             break;
         case 4:
-            document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/iceman_v1.jpeg";
+            document.getElementById(elemento).src = "imagens/iceman_v1.jpeg";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="LightBlue";
             break;
         case 5:
-            document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/fireman.jpg";
+            document.getElementById(elemento).src = "imagens/fireman.jpg";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="Cornsilk";
             break;
         case 6:
-            document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/bombman.jpg";
+            document.getElementById(elemento).src = "imagens/bombman.jpg";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="lavanda";
             break;
         case 7:
-            document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/roll.png";
+            document.getElementById(elemento).src = "imagens/roll.png";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="darkgray";
             break;
         case 8:
-            document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/Dr_Light_v2.jpeg"
+            document.getElementById(elemento).src = "imagens/Dr_Light_v2.jpeg"
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="Aliceblue";
             break;
         case 9:
-            document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/Megaman.png";
+            document.getElementById(elemento).src = "imagens/Megaman.png";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="blue";
             break;
         default:
             break;
@@ -171,19 +328,19 @@ function randomico(elemento, velocidade, startstop) {
             switch(elemento) {
             case  "aleatorio1":     
                 clearInterval(randomicos1[0]);
-                randomico("aleatorio2",250,"start");
+                randomico("aleatorio2",180,"start");
                 break;
             case "aleatorio2":
                 clearInterval(randomicos1[1]);
-                randomico("aleatorio3",250,"start");
+                randomico("aleatorio3",180,"start");
                 break;
             case "aleatorio3":
                 clearInterval(randomicos1[2]);
-                randomico("aleatorio4",250,"start");
+                randomico("aleatorio4",180,"start");
                 break;
             case "aleatorio4":
                 clearInterval(randomicos1[3]);
-                randomico("aleatorio5",250,"start");
+                randomico("aleatorio5",180,"start");
                 break;
             case "aleatorio5":
                 clearInterval(randomicos1[4]);
@@ -198,34 +355,34 @@ function randomico(elemento, velocidade, startstop) {
         switch(numero1)
         {
             case 0:
-                document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/DrWily3.jpg";
+                document.getElementById(elemento).src = "imagens/DrWily3.jpg";
                 break;
             case 1:
-                document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/cutman_v2.jpeg";
+                document.getElementById(elemento).src = "imagens/cutman_v2.jpeg";
                 break;
             case 2:
-                document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/gutsman.jpg";
+                document.getElementById(elemento).src = "imagens/gutsman.jpg";
                 break;
             case 3:
-                document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/Elecman.jpg";
+                document.getElementById(elemento).src = "imagens/Elecman.jpg";
                 break;
             case 4:
-                document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/iceman_v1.jpeg";
+                document.getElementById(elemento).src = "imagens/iceman_v1.jpeg";
                 break;
             case 5:
-                document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/fireman.jpg";
+                document.getElementById(elemento).src = "imagens/fireman.jpg";
                 break;
             case 6:
-                document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/bombman.jpg";
+                document.getElementById(elemento).src = "imagens/bombman.jpg";
                 break;
             case 7:
-                document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/roll.png";
+                document.getElementById(elemento).src = "imagens/roll.png";
                 break;
             case 8:
-                document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/Dr_Light_v2.jpeg"
+                document.getElementById(elemento).src = "imagens/Dr_Light_v2.jpeg"
                 break;
             case 9:
-                document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/Megaman.png";
+                document.getElementById(elemento).src = "imagens/Megaman.png";
                 break;
             default:
                 break;
@@ -420,47 +577,6 @@ function dump(obj) { //Função que mostra o conteúdo de um array em um alert o
 }
 
 
-// ===== FUNÇÕES DE RESPONSIVIDADE ADICIONAIS =====
-
-// Função para redimensionar imagens conforme a tela
-function ajustarTamanhoImagens() {
-    const larguraTela = window.innerWidth;
-    let novoTamanho = 160; // tamanho padrão
-    
-    if (larguraTela < 768) {
-        novoTamanho = 100;
-    }
-    
-    if (larguraTela < 480) {
-        novoTamanho = 80;
-    }
-    
-    // Aplicar aos elementos de imagem
-    const imagens = document.querySelectorAll('#aleatorio1, #aleatorio2, #aleatorio3, #aleatorio4, #aleatorio5');
-    imagens.forEach(img => {
-        img.style.width = novoTamanho + 'px';
-        img.style.height = novoTamanho + 'px';
-    });
-}
-
-// Chamar a função no carregamento e no redimensionamento da tela
-window.addEventListener('load', function() {
-    ajustarTamanhoImagens();
-    // Garantir que a função iniciar() original ainda seja executada
-    //iniciar();
-});
-
-window.addEventListener('resize', ajustarTamanhoImagens);
-
-// Ajustar o modal para dispositivos móveis
-$(document).on('show.bs.modal', '.modal', function () {
-    if ($(window).width() < 768) {
-        $(this).find('.modal-dialog').css({
-            'margin': '10px auto',
-            'width': '90%'
-        });
-    }
-});
 
 
 

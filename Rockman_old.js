@@ -13,11 +13,11 @@ document.getElementsByTagName("body").onload = iniciar();
 function iniciar() {
     //Função que inicio a função randomicos nos cinco elementos aleatórios de uma vez.
     //Também zera a pontuação de um jogo anterior e esconde os elementos de tentativas restantes e pontos bônus
-    randomico("aleatorio1",250,"start");
-    //randomico("aleatorio2",250,"start");
-    //randomico("aleatorio3",250,"start");
-    //randomico("aleatorio4",250,"start");
-    //randomico("aleatorio5",250,"start");
+    randomico("aleatorio1",180,"start");
+    //randomico("aleatorio2",180,"start");
+    //randomico("aleatorio3",180,"start");
+    //randomico("aleatorio4",180,"start");
+    //randomico("aleatorio5",180,"start");
     document.getElementById("pontos").value = 0;
     document.getElementById("b2").style.display ="none";
     document.getElementById("b8").style.display ="none";
@@ -124,37 +124,50 @@ function aux_randomico(elemento){ //gera um número aleatorio de 0 a 9  e coloca
     n1 = Math.floor(Math.random() * 10);
     document.getElementById(elemento).value = n1;
     //Vou fazer aqui o switch para colocar as imagens
+    // 0 DrWily; 1 cutman ; 2 gutsman; 3 elecman; 4 iceman; 5 fireman ; 6 bombman; 7 roll ; 8 Dr Light ; 9 Rockman
+    //0 DrWily3.jpg; cutman_v2.jpeg ; gutsman.jpg; Elecman.jpg ; iceman_v1.jpeg; fireman.jpg ; bombman.jpg; roll.png; Dr_Light_v2.jpeg; Megaman.png.
     switch(n1)
     {
         case 0:
-            document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/DrWily3.jpg";
+            
+            document.getElementById(elemento).src = "imagens/DrWily3.jpg";
+           // document.getElementsByName(elemento)[0].style.backgroundColor="yellow";
             break;
         case 1:
-            document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/cutman_v2.jpeg";
+            document.getElementById(elemento).src = "imagens/cutman_v2.jpeg";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="red";
             break;
         case 2:
-            document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/gutsman.jpg";
+            document.getElementById(elemento).src = "imagens/gutsman.jpg";
+           // document.getElementsByName(elemento)[0].style.backgroundColor="green";
             break;
         case 3:
-            document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/Elecman.jpg";
+            document.getElementById(elemento).src = "imagens/Elecman.jpg";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="brown";
             break;
         case 4:
-            document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/iceman_v1.jpeg";
+            document.getElementById(elemento).src = "imagens/iceman_v1.jpeg";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="LightBlue";
             break;
         case 5:
-            document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/fireman.jpg";
+            document.getElementById(elemento).src = "imagens/fireman.jpg";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="Cornsilk";
             break;
         case 6:
-            document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/bombman.jpg";
+            document.getElementById(elemento).src = "imagens/bombman.jpg";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="lavanda";
             break;
         case 7:
-            document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/roll.png";
+            document.getElementById(elemento).src = "imagens/roll.png";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="darkgray";
             break;
         case 8:
-            document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/Dr_Light_v2.jpeg"
+            document.getElementById(elemento).src = "imagens/Dr_Light_v2.jpeg"
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="Aliceblue";
             break;
         case 9:
-            document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/Megaman.png";
+            document.getElementById(elemento).src = "imagens/Megaman.png";
+          //  document.getElementsByName(elemento)[0].style.backgroundColor="blue";
             break;
         default:
             break;
@@ -171,19 +184,19 @@ function randomico(elemento, velocidade, startstop) {
             switch(elemento) {
             case  "aleatorio1":     
                 clearInterval(randomicos1[0]);
-                randomico("aleatorio2",250,"start");
+                randomico("aleatorio2",180,"start");
                 break;
             case "aleatorio2":
                 clearInterval(randomicos1[1]);
-                randomico("aleatorio3",250,"start");
+                randomico("aleatorio3",180,"start");
                 break;
             case "aleatorio3":
                 clearInterval(randomicos1[2]);
-                randomico("aleatorio4",250,"start");
+                randomico("aleatorio4",180,"start");
                 break;
             case "aleatorio4":
                 clearInterval(randomicos1[3]);
-                randomico("aleatorio5",250,"start");
+                randomico("aleatorio5",180,"start");
                 break;
             case "aleatorio5":
                 clearInterval(randomicos1[4]);
@@ -198,34 +211,34 @@ function randomico(elemento, velocidade, startstop) {
         switch(numero1)
         {
             case 0:
-                document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/DrWily3.jpg";
+                document.getElementById(elemento).src = "imagens/DrWily3.jpg";
                 break;
             case 1:
-                document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/cutman_v2.jpeg";
+                document.getElementById(elemento).src = "imagens/cutman_v2.jpeg";
                 break;
             case 2:
-                document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/gutsman.jpg";
+                document.getElementById(elemento).src = "imagens/gutsman.jpg";
                 break;
             case 3:
-                document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/Elecman.jpg";
+                document.getElementById(elemento).src = "imagens/Elecman.jpg";
                 break;
             case 4:
-                document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/iceman_v1.jpeg";
+                document.getElementById(elemento).src = "imagens/iceman_v1.jpeg";
                 break;
             case 5:
-                document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/fireman.jpg";
+                document.getElementById(elemento).src = "imagens/fireman.jpg";
                 break;
             case 6:
-                document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/bombman.jpg";
+                document.getElementById(elemento).src = "imagens/bombman.jpg";
                 break;
             case 7:
-                document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/roll.png";
+                document.getElementById(elemento).src = "imagens/roll.png";
                 break;
             case 8:
-                document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/Dr_Light_v2.jpeg"
+                document.getElementById(elemento).src = "imagens/Dr_Light_v2.jpeg"
                 break;
             case 9:
-                document.getElementById(elemento).src = "https://raw.githubusercontent.com/flavioteixeira1/Rockman_Jackpot/98261bebffe6194801ec616cb8f48d3f4ff2c210/imagens/Megaman.png";
+                document.getElementById(elemento).src = "imagens/Megaman.png";
                 break;
             default:
                 break;
@@ -420,47 +433,6 @@ function dump(obj) { //Função que mostra o conteúdo de um array em um alert o
 }
 
 
-// ===== FUNÇÕES DE RESPONSIVIDADE ADICIONAIS =====
-
-// Função para redimensionar imagens conforme a tela
-function ajustarTamanhoImagens() {
-    const larguraTela = window.innerWidth;
-    let novoTamanho = 160; // tamanho padrão
-    
-    if (larguraTela < 768) {
-        novoTamanho = 100;
-    }
-    
-    if (larguraTela < 480) {
-        novoTamanho = 80;
-    }
-    
-    // Aplicar aos elementos de imagem
-    const imagens = document.querySelectorAll('#aleatorio1, #aleatorio2, #aleatorio3, #aleatorio4, #aleatorio5');
-    imagens.forEach(img => {
-        img.style.width = novoTamanho + 'px';
-        img.style.height = novoTamanho + 'px';
-    });
-}
-
-// Chamar a função no carregamento e no redimensionamento da tela
-window.addEventListener('load', function() {
-    ajustarTamanhoImagens();
-    // Garantir que a função iniciar() original ainda seja executada
-    //iniciar();
-});
-
-window.addEventListener('resize', ajustarTamanhoImagens);
-
-// Ajustar o modal para dispositivos móveis
-$(document).on('show.bs.modal', '.modal', function () {
-    if ($(window).width() < 768) {
-        $(this).find('.modal-dialog').css({
-            'margin': '10px auto',
-            'width': '90%'
-        });
-    }
-});
 
 
 

@@ -1,0 +1,26 @@
+1 Gera uma carta que corresponde a uma figura (entre as dez disponíveis)
+2 A carta fica com um fundo (virada)
+3 Jogador tenta adivinhar qual é o personagem da carta (clicando no card correspondente )
+4 Se ele acertar ganha 1 ponto
+5 Isso se repete até que terminem todas as tentativas
+6 Quando as tentativas terminarem , o jogo mostra o placar.
+
+
+
+
+
+Jogo de adivinhar senha
+Jogador vs bot
+Cada vez q iniciar o jogo vai gerar uma senha com 4 cores
+ex: a senha pode ser amarelo + amarelo + verde + amarelo
+A senha vai ser composta pelas cores
+o jogador tera 7 tentativas para acertar a senha
+quando o jogador acertar vai dar o resultado da cor que ele acertou e a posição que foi acertada
+javascript
+
+como se fosse o jogo "termo.pt" so que com cores 
+
+
+
+
+

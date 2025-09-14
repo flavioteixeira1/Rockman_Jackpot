@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset ="UTF-8" />
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <script src="Adivinhar_cores.js"></script>
+    <!-- Importando as coisas do bootstrap para meus modais-->
+    <!-- Primeiro o CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- depois o jquery, o popper.js e o bootstrap js  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" type="text/css">
+    
+
+
+    <title>Adivinhe as cores</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body onload="iniciar();">
+
+  <div class="container-fluid">
+    <!--Aqui vai o paragrafo de título -->
+    <header>
+      <div class="row largura-limitada">
+        <h4> Descubra a senha de cores</h4>
+    </header>
+
+    <!-- Aqui vai a senha a ser descoberta -->
+    <section class="largura-limitada centralizada">
+      <div class="row">
+        <!-- <i class="fa fa-smile-o" aria-hidden="true"></i> -->
+        <div class="senha-container">
+
+          <div id="s1" class="senha"><img src="imagens/interrogacao.png" alt="&nbsp;&nbsp;ok&nbsp;"></div>
+          <div id="s2" class="senha"><img src="imagens/interrogacao.png" alt="&nbsp;&nbsp;ok&nbsp;" ></div>
+          <div id="s3" class="senha"><img src="imagens/interrogacao.png" alt="&nbsp;&nbsp;ok&nbsp;"></div>
+          <div id="s4" class="senha"><img src="imagens/interrogacao.png" alt="&nbsp;&nbsp;ok&nbsp;" ></div>
+          <div class="senha-vazio">&nbsp;&nbsp;</div>
+
+           
+          <div id="acerto" class="senha painel-acerto">
+            <img src="imagens/acertou_transparente.jpeg">
+            <span>  <i class="fa fa-smile-o" aria-hidden="true"></i>
+            </i>Parabéns acertou !!!</span> <i class="fa fa-smile-o" aria-hidden="true"></i>
+
+          </div>
+
+
+          <div id="erro" class="senha painel-erro">
+            <img src="imagens/errado.jpeg">
+            <span><i class="fa fa-times" aria-hidden="true"></i> Resposta errada</span>
+          </div>
+          
+
+
+        </div>
+      </div>
+    </section>
+   
+
+    
+    <!-- Aqui vai uma paleta de cores para fazer a escolha -->
+    
+    <div class="row"><p>&nbsp;</p></div>
+
+    <div class="largura-limitada">
+      <div class="cores-container">
+        <div onclick="escolher('white',0)"class="cores branco">&nbsp;&nbsp;&nbsp;</div>
+        <div onclick="escolher('black',1)"class="cores preto">&nbsp;&nbsp;&nbsp;</div>
+        <div onclick="escolher('blue',2)"class="cores azul">&nbsp;&nbsp;&nbsp;</div>
+        <div onclick="escolher('red',3)"class="cores vermelho">&nbsp;&nbsp;&nbsp;</div>
+      </div>
+  
+      <div class="row"><p>&nbsp;</p></div>
+
+      <div class="cores-container">
+        <div onclick="escolher('green',4)"class="cores verde">&nbsp;&nbsp;&nbsp;</div>
+        <div onclick="escolher('yellow',5)"class="cores amarelo">&nbsp;&nbsp;&nbsp;</div>
+        <div onclick="escolher('pink',6)"class="cores rosa">&nbsp;&nbsp;&nbsp;</div>
+        <div onclick="escolher('darkblue',7)"class="cores azul-escuro">&nbsp;&nbsp;&nbsp;</div>
+    </div>
+
+  </div>
+    
+    <!--Aqui vai um painel que mostra as tentativas restantes e a pontuação -->
+    <footer>
+      <div class="row">&nbsp;&nbsp;</div>
+      <div class="row">
+        <div>
+          <span>Tentativas: </span>&nbsp;&nbsp;&nbsp;<span id="tentativas">&nbsp;&nbsp;</span>
+          <span>Pontos: </span>&nbsp;&nbsp;&nbsp;<span id="pontuacao">&nbsp;&nbsp;</span>
+        </div>
+      </div>
+      <div class="row">&nbsp;&nbsp;</div>
+      <div id="reiniciar">
+        <button onclick="location.reload();" class="btn-primary">REINICIAR</button>
+      </div>
+
+    </footer>
+
+    <!--
+    <div class="spin-container">
+        <div class="girando3dhorizontal">
+      teste girando
+    </div>
+    
+    <div class="girando2dhorario">
+      teste girando
+    </div>
+
+    -->
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
