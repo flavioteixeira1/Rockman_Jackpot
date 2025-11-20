@@ -1,0 +1,50 @@
+
+
+#picture div img{
+    padding:5px;
+    width:160px;
+    height:160px;
+    align-content: center;
+}
+
+#pontos{
+    border:none;
+}
+
+#modalregrasfiguras li img{
+    width:50px;
+    height:50px;
+    display:inline-flex;
+
+}
+
+#aleatorios > div {
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 160px;
+    height: 160px;
+    border: 4px solid;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: transparent !important;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Cores das bordas baseadas no número */
+#aleatorios > div[style*="yellow"] { border-color: yellow; color: yellow; }
+#aleatorios > div[style*="red"] { border-color: red; color: red; }
+#aleatorios > div[style*="green"] { border-color: green; color: green; }
+#aleatorios > div[style*="brown"] { border-color: brown; color: brown; }
+#aleatorios > div[style*="LightBlue"] { border-color: lightblue; color: lightblue; }
+#aleatorios > div[style*="Cornsilk"] { border-color: cornsilk; color: cornsilk; }
+#aleatorios > div[style*="lavanda"] { border-color: lavender; color: lavender; }
+#aleatorios > div[style*="darkgray"] { border-color: darkgray; color: darkgray; }
+#aleatorios > div[style*="Aliceblue"] { border-color: aliceblue; color: aliceblue; }
+#aleatorios > div[style*="blue"] { border-color: blue; color: blue; }
+
+
+

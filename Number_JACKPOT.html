@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="bootstrap.3.3.7.min.css" />
+<title>Rockman Jackpot </title>
+<link rel="stylesheet" type="text/css" href="NumberJackpot.css" />  
+<link rel="icon" href="imagens/favicon.ico">
+<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" /> -->
+<!-- para o font awesome funcionar localmente a pasta webfonts deve estar no mesmo diretorio do css-->
+    <link rel="stylesheet" href="css/font-awesome-6.1.1.all.css" >
+
+
+</head>
+
+<body>
+
+<div class="container">
+    <div id="picture">
+       
+    <div class="row"><div class="col-xs-12 col-md-12"></div><div>&nbsp;</div></div>
+
+    <div class="row">
+      <div class="col-xs-1 col-md-2">&nbsp;</div>
+      <div class="col-xs-6 col-md-6"><h3 class="bg-info" id = "info">
+        Clique nos Números para pontuar
+      </h3></div>
+      <div class="col-xs-1 col-md-3">&nbsp;</div>
+      <div class="row"><div class="col-xs-12 col-md-12"></div><div>&nbsp;</div></div>
+  </div>
+
+  <div id="Modal2" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+     <!-- Modal content JOGO ENCERRADO-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title">JOGO ENCERRADO</h2>
+          </div>
+         <div class="modal-body">
+         <h3 class="bg-info" id="modalpontos">
+         </h3> 
+         
+          </div>
+          <div class="modal-footer">
+             <button type="button" class="btn btn-default" data-dismiss="modal">FECHAR</button>
+           </div>
+         </div>
+       </div>
+     </div>
+  
+  <div class="row">
+      <div class="col-xs-2 col-md-2">&nbsp;</div>
+      <div class="col-xs-4 col-md-4"><span class="bg-warning" id="restante"></span></div>
+      <div class="col-xs-2 col-md-4">&nbsp;</div>
+  </div>
+  <div class="row"><div class="col-xs-12 col-md-10">&nbsp;</div><div>&nbsp;</div></div>
+    
+    <div class="row" id="aleatorios" >
+                    <div onclick="stopthis('aleatorio1')" class="col-md-2" name="aleatorio1" id="aleatorio1" ></div>
+                    <div onclick="stopthis('aleatorio2')" class="col-md-2" name="aleatorio2" id="aleatorio2" ></div>
+                    <div onclick="stopthis('aleatorio3')" class="col-md-2" name="aleatorio3" id="aleatorio3" ></div>
+                    <div onclick="stopthis('aleatorio4')" class="col-md-2" name="aleatorio4" id="aleatorio4" ></div>
+                    <div onclick="stopthis('aleatorio5')" class="col-md-2" name="aleatorio5" id="aleatorio5" ></div>
+            </div>
+
+    
+    <div class="row"><div class="col-xs-12 col-md-12"></div><div>&nbsp;</div></div> 
+    <div class="row"><div class="col-xs-12 col-md-12"></div><div>&nbsp;</div></div>
+    <div class="row">
+    <div class="col-xs-1 col-md-2">&nbsp;</div>
+              <div class="col-xs-5 col-md-4 button-container">
+                   <button class="btn btn-primary btn-lg" id="b1" >INTERVALO</button> 
+                  <button class="btn btn-primary btn-lg" id="reiniciar" onclick="location.reload();"> REINICIAR</button>  
+                  </div>
+                  &nbsp;
+                
+	
+               
+              
+    </div>
+    <div class="row"><div class="col-xs-12 col-md-12"></div><div>&nbsp;</div></div> 
+    <div class="row"><div class="col-xs-12 col-md-12"></div><div>&nbsp;</div></div>
+
+    <div class="row">
+      <div class="col-xs-6 col-md-3" id = "resultado"> 
+          <span>&nbsp;</span>
+          <span> Pontos :  </span> 
+      </div>
+        <div class="col-xs-1 col-md-1"></div> 
+   
+        <div class="col-xs-1 col-md-2">
+            <div class="pontos">
+                <span>  
+                  &nbsp;
+                </span>
+                <span>Pontuação : </span> <span><input id="pontos" value="0" size="2"/></span>
+            </div>
+        </div>
+      </div>
+      <div class="row"><div class="col-xs-12 col-md-12"></div><div>&nbsp;</div></div>
+
+   <div class="row">
+        <div><span class="bg-info btn-lg" id="b2" > </span></div>
+        <div class="row"><div class="col-xs-12 col-md-12"></div><div>&nbsp;</div></div>
+        <div><span  class="bg-success btn-lg" id="b8" > </span></div>   
+        <div><span id="b7" > </span></div>
+   </div>
+
+  
+          
+    <div class="row"><div class="col-xs-12 col-md-12"></div><div>&nbsp;</div></div> 
+
+       
+  </div>
+
+
+  </body>
+
+   <!-- Importando o jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>  
+  
+  <!-- Importando o js do bootstrap -->
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+  
+  <script src="Number_JACKPOT.js"></script>
+
+  </html>
